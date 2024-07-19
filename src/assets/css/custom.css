@@ -1,0 +1,192 @@
+/* nz-table */
+nz-table div.ant-table-wrapper div.ant-table table thead tr.ant-table-row th {
+  padding: 8px;
+  vertical-align: middle;
+  border: none;
+  background-color: #E8FEE5;
+  border-bottom: 1px solid #fff;
+}
+
+nz-table div.ant-table-wrapper div.ant-table {
+  font-size: 16px;
+  font-family: 'KanitRegular';
+}
+
+nz-table div.ant-table-wrapper div.ant-table table thead tr.ant-table-row th.t-center {
+  text-align: center;
+  vertical-align: text-top !important;
+}
+
+nz-table div.ant-table-wrapper div.ant-table table tbody tr.ant-table-row td.t-center {
+  text-align: center;
+  vertical-align: text-top !important;
+}
+
+nz-table .ant-table-tbody>tr>td,
+.ant-table-thead>tr>th {
+  padding: 10px 5px 10px 0px;
+}
+
+nz-table .list-condition a {
+  display: inline-block;
+  line-height: 0;
+  margin-left: 0px;
+}
+
+nz-table .list-condition {
+  display: none;
+  padding-right: 0px;
+}
+
+nz-table .body-table-list tr.active .box-condition span,
+.box-condition:hover span {
+  display: none;
+}
+
+nz-table .body-table-list tr.active .box-condition .list-condition,
+.box-condition:hover .list-condition {
+  display: contents;
+  text-align: right;
+}
+
+/* Add Paging Table */
+nz-table .ant-select-selection-selected-value,
+.ant-pagination-item {
+  font-family: KanitLight;
+  font-size: 16px;
+  color: #787878;
+}
+
+nz-table .ant-pagination-item:hover {
+  color: #47b03f;
+}
+
+/* Add Paging Table */
+
+/* freezestep */
+.content-taxform.freezestep .control-boxstep {
+  background-color: #f8f8f8;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.content-taxform.freezestep .step-taxform {
+  margin: 0 auto;
+  padding: 5px 0 5px 0;
+}
+
+.content-taxform.freezestep .item-topright,
+.content-taxform.freezestep .item-topleft {
+  position: fixed;
+  z-index: 200;
+  top: 20px;
+}
+
+.content-taxform.freezestep .item-toppt40 {
+  position: fixed;
+  z-index: 200;
+  top: 20px;
+  right: 15px;
+}
+
+.freezestep .item-toppt40 .ef-close {
+  min-width: 50px;
+}
+
+.freezestep .item-toppt40 .ef-close span {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    /* max-width: 1170px !important; */
+    max-width: 90% !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+}
+
+/* tax */
+.topright-data-update .btn.btn-update {
+  margin-left: 10px;
+}
+
+.btn.btn-update {
+  border: 1px solid #65CC59;
+  height: 35px;
+  border-radius: 35px;
+  padding: 0 10px 0 30px;
+  color: #65CC59;
+  font-size: 17px;
+  line-height: 19px;
+  background-image: url(../images/icon-update.svg);
+  background-size: auto 20px;
+  background-repeat: no-repeat;
+  background-position: 9px center;
+  background-color: transparent;
+}
+
+.btn.btn-update:hover {
+  background-color: #65CC59;
+  color: #fff;
+  background-image: url(../images/icon-update-white.svg);
+}
+
+.btn.btn-red-border {
+  border: 1px solid #F13636;
+  color: #F13636;
+  border-radius: 25px;
+  font-size: 16px;
+  line-height: 14px;
+  min-width: 110px;
+  padding-bottom: 8px;
+  font-family: 'KanitLight';
+  background-color: transparent;
+}
+
+.btn.btn-red-border:hover {
+  background-color: #F13636;
+  color: #fff;
+}
+
+.hidden-file {
+  visibility: hidden;
+  position: absolute;
+  overflow: hidden;
+  width: 0px;
+  height: 0px;
+  border: none;
+  margin: 0;
+  padding: 0
+}
+
+.ant-checkbox-disabled.ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: black !important;
+}
+
+.ant-radio-disabled .ant-radio-inner::after {
+  background-color: black !important;
+}
+
+.infoTittle3 {
+  left: 0%;
+  right: -125.18%;
+  top: 2.94%;
+  bottom: 0%;
+  font-family: 'KanitRegular';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 33px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  color: #1C1C1C;
+}

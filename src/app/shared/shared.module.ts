@@ -65,6 +65,7 @@ import { NzResultModule } from 'ng-zorro-antd/result';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -139,8 +140,9 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
     NzNotificationModule,
     NzModalModule,
     NzAvatarModule,
-    NzUploadModule
-
+    NzUploadModule,
+    ReactiveFormsModule,
+    FormsModule,
 
 
 
@@ -211,7 +213,9 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
     NzNotificationModule,
     NzModalModule,
     NzAvatarModule,
-    NzUploadModule
+    NzUploadModule,
+    ReactiveFormsModule,
+    FormsModule,
 
 
 

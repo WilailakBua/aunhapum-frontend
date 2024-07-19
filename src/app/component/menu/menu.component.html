@@ -1,1 +1,56 @@
-<p>menu works!</p>
+<nz-card class="ml-5 mr-5" nzTitle="ขนมปังปิ้ง">
+  <form [formGroup]="formModal" class="ml-5">
+    <div class="col-6 mb-5">
+      <div class="row">
+        <input
+          placeholder="input here"
+          nz-input
+          formControlName="inputSearch"
+          (ngModelChange)="onChange($event)"
+        />
+      </div>
+    </div>
+  </form>
+
+  <div class="row">
+    <nz-table #basicTable [nzData]="listData">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data; let i = index" (click)="selectOrder(data)">
+          <td>{{ i + 1 }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.price }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+
+  <div class="row">
+    
+    <div class="col-4">
+    รวม  {{ sumary }} บาท
+    </div>
+    <nz-table #orderTable [nzData]="orders">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of orderTable.data; let i = index" (click)="deleteRow(data.id)">
+          <td>{{ i + 1 }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.price }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-card>
