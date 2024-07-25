@@ -1,1 +1,60 @@
-<p>insert-menu works!</p>
+<nz-card class="ml-5 mr-5" nzTitle="เพิ่มเมนู">
+  <form [formGroup]="formModal">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-1">
+          <label> ชื่อเมนู </label>
+        </div>
+        <div class="col-4">
+          <input
+            placeholder="name"
+            nz-input
+            type="text"
+            formControlName="insertName"
+            (ngModelChange)="insertName($event)"
+          />
+        </div>
+        <div class="col-1">
+          <label> ราคา </label>
+        </div>
+        <div class="col-2">
+          <input
+            placeholder="price"
+            nz-input
+            type="number"
+            formControlName="insertPrice"
+            (ngModelChange)="insertPrice($event)"
+          />
+        </div>
+
+        <div class="col-2">
+          <button nz-button nzType="primary" (click)="insertMenu()">
+            เพิ่ม
+          </button>
+          <button nz-button nzType="primary" (click)="clearMenu()">
+            ล้างข้อมูล
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div *ngFor="let menu of menuList">
+    <div class="col-6">
+      <div class="row">
+        <div class="col-1">
+          <label class="text-right">ชื่อเมนู</label>
+        </div>
+        <div class="col-2">
+          {{ menu.name }}
+        </div>
+        <div class="col-1">
+          <label class="text-right">ราคา</label>
+        </div>
+        <div class="col-2">
+          {{ menu.price }}
+        </div>
+      </div>
+    </div>
+  </div>
+</nz-card>

@@ -2,12 +2,12 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
     {
-        path: 'menu',
+        path: '',
         loadChildren: () => import('./component/menu.module').then(m => m.MenuModule)
     },
     {
         path: '',
-        redirectTo: '/menu',
+        redirectTo: '/',
         pathMatch: 'full'
     }
 ];

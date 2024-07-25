@@ -5,7 +5,7 @@ import { InsertMenuComponent } from './insert-menu/insert-menu.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'menu',
     component: MenuComponent
   },
   {

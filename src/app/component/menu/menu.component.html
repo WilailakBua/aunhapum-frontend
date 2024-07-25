@@ -1,23 +1,29 @@
-<!-- <div class="topnav">
-  <a class="active" href="/menu">Menu</a>
-  <a href="#news">Insert Menu</a>
-</div> -->
-
 <nz-card class="ml-5 mr-5" nzTitle="ขนมปังปิ้ง">
   <div class="col-12">
     <div class="row">
-      <form [formGroup]="formModal">
-        <div class="col-6 mb-2" style="padding-left: 12px">
-          <div class="row widthTB">
+      <div class="col-6 mb-2" style="padding-left: 12px">
+        <div class="row widthTB">
+          <form [formGroup]="formModal">
             <input
               placeholder="Search"
               nz-input
               formControlName="inputSearch"
               (ngModelChange)="onChange($event)"
             />
+          </form>
+        </div>
+      </div>
+
+      <div class="col-6 mb-2">
+        <div class="row">
+          <div class="col-2">รวม</div>
+          <div class="col-2">{{ sumary }}</div>
+          <div class="col-2">บาท</div>
+          <div class="col-2">
+            <button nz-button nzDanger (click)="delete()">ลบ</button>
           </div>
         </div>
-      </form>
+      </div>
     </div>
 
     <div class="row">
@@ -43,16 +49,6 @@
         </nz-table>
       </div>
       <div class="col-6 widthTB">
-        <div class="col-12">
-          <div class="row">
-            <div class="col-2">รวม</div>
-            <div class="col-2">{{ sumary }}</div>
-            <div class="col-2">บาท</div>
-            <div class="col-2">
-              <button nz-button nzDanger (click)="delete()">ลบ</button>
-            </div>
-          </div>
-        </div>
         <nz-table #orderTable [nzData]="orders">
           <thead>
             <tr>
