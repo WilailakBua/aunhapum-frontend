@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/aunhapum",
+            "outputPath": "public",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,22 +27,37 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "src/styles.scss",
+              "src/assets/css/buttons.scss",
+              "src/assets/css/colors.scss",
+              "src/assets/css/form.scss",
+              "src/assets/css/line.scss",
+              "src/assets/css/modal.scss",
+              "src/assets/css/progress.scss",
+              "src/assets/css/shadow.scss",
+              "src/assets/css/sidemenu.scss",
+              "src/assets/css/table.scss",
+              "src/assets/css/tabs.scss",
+              "src/assets/scss/custom.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "5MB",
+                  "maximumError": "10MB"
                 }
               ],
               "outputHashing": "all"
