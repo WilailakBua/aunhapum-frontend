@@ -1,0 +1,27 @@
+$grid-columns: 12;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px
+);
+
+$form-color-focus: #53B847;
+$form-color-error: #CB0606;
+$text-color-gray: #58595B;
+$text-color-black: #2d2d2d;
+$color-pink: #e02c66f2;
+
+
+$green-font: #5aa946;
+$red-font: #dc3d3d;
+$gray-font: #828282;
