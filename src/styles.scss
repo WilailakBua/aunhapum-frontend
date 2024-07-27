@@ -1088,6 +1088,12 @@ $prefix: "mo-";
   color: white;
 }
 
+.form-floating > .child-class ~ .sibling-label {
+  /* Your styles here */
+  font-size: 16px;
+}
+
+
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 

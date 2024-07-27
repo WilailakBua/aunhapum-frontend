@@ -178,6 +178,7 @@ export class MenuComponent implements OnInit {
 
   delete() {
     this.orders = [];
+    this.sumary = 0;
   }
 
 }
