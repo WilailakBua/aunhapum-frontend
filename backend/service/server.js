@@ -1,11 +1,14 @@
+import { sql } from "@vercel/postgres";
+import { NextApiResponse, NextApiRequest } from 'next';
+
 const express = require('express');
 const { Pool } = require('pg');
 
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 // PostgreSQL connection pool
-const pool = new Pool({
+const pool = new sql({
     user: 'default',
     host: 'ep-small-tree-a4z0xdqc-pooler.us-east-1.aws.neon.tech',
     database: 'verceldb',
@@ -23,6 +26,6 @@ app.get('/api/data', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+app.listen(pool.port, () => {
+    console.log(`Server listening on port ${pool.port}`);
 });

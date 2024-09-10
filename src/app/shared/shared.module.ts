@@ -66,6 +66,8 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAnchorModule } from 'ng-zorro-antd/anchor';
 import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AunhapumService } from './service/aunhapum.service';
 
 
 
@@ -216,12 +218,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NzUploadModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule
 
 
 
 
+  ],
+  providers: [HttpClient, AunhapumService]
 
-  ]
 })
 
 export class SharedModule { }

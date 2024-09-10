@@ -4,7 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MenuRoutingModule } from './menu-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { InsertMenuComponent } from './insert-menu/insert-menu.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,8 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     SharedModule,
     MenuRoutingModule,
-    HttpClientModule
+    
 
-  ]
+  ],
 })
 export class MenuModule { }

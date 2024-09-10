@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MenuModel } from '../../shared/model/menuModel';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 import { HttpClient } from '@angular/common/http';
+import { AunhapumService } from '../../shared/service/aunhapum.service';
 
 @Component({
   selector: 'app-menu',
@@ -128,22 +129,29 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private aunhapumService: AunhapumService,
   ) {}
 
   ngOnInit(): void {
-    this.listData = this.dataMenu;
+    // this.listData = this.dataMenu;
     this.createForm();
+    this.intitialData();
   }
 
   intitialData() {
-    this.http.post
+    this.aunhapumService.getData().subscribe(res => {
+    // this.listData = res[0];
+    console.log('res >> ', res);
+    
+
+    });
   }
 
   onChange(value: string): void {
-    this.listData = this.dataMenu.filter(
-      (option) => option.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
-    );
+    // this.listData = this.dataMenu.filter(
+    //   (option) => option.name.toLowerCase().indexOf(value.toLowerCase()) !== -1
+    // );
   }
 
   createForm() {
