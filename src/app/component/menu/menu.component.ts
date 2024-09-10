@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MenuModel } from '../../shared/model/menuModel';
 import { NzButtonSize } from 'ng-zorro-antd/button';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu',
@@ -125,11 +126,18 @@ export class MenuComponent implements OnInit {
   size: NzButtonSize = 'large';
   sumary: number;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
 
   ngOnInit(): void {
     this.listData = this.dataMenu;
     this.createForm();
+  }
+
+  intitialData() {
+    this.http.post
   }
 
   onChange(value: string): void {
