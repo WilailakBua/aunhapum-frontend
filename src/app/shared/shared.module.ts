@@ -68,12 +68,14 @@ import { NzBackTopModule } from 'ng-zorro-antd/back-top';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AunhapumService } from './service/aunhapum.service';
-
-
-
-
-
-
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [],
   imports: [
@@ -145,10 +147,14 @@ import { AunhapumService } from './service/aunhapum.service';
     NzUploadModule,
     ReactiveFormsModule,
     FormsModule,
-
-
-
-
+    MatFormFieldModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatExpansionModule
   ],
   exports: [
     NzFlexModule,
@@ -218,9 +224,15 @@ import { AunhapumService } from './service/aunhapum.service';
     NzUploadModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
-
-
+    HttpClientModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatListModule,
+    MatIconModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatExpansionModule
 
 
   ],

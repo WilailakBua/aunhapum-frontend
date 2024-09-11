@@ -1113,3 +1113,33 @@ $prefix: "mo-";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/helpers";
 @import "../node_modules/bootstrap/scss/utilities/api";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.plus-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #131842;
+  border-radius: 50%;
+  position: relative;
+}
+
+.plus-icon::before, .plus-icon::after {
+  content: "";
+  position: absolute;
+  top: 22%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 10px;
+  background-color: #fff;
+}
+
+.plus-icon::before {
+  transform: rotate(45deg);
+}
+
+.plus-icon::after {
+  transform: rotate(-45deg);
+}

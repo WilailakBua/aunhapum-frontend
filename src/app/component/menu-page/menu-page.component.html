@@ -1,0 +1,136 @@
+<mat-card>
+  <div class="col-12 m-3 bg-card">
+    <div class="row">
+      <div class="col-5 m-3">
+        <mat-card class="bg-mini-card m-3">
+          <mat-card-header>
+            <mat-card-title>Menu</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field appearance="outline">
+              <mat-label>Search menu</mat-label>
+              <input matInput placeholder="Enter item name" />
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            <mat-list>
+              <mat-list-item *ngFor="let item of filteredMenuItems">
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-8">
+                      <span matListItemTitle>{{ item.name }}</span>
+                      <span matListItemLine>{{ item.price | currency }}</span>
+                    </div>
+                    <div class="col-4">
+                      <section>
+                        <div class="example-flex-container">
+                          <div class="example-button-container">
+                            <!-- <button
+                              (click)="addToOrder(item)"
+                              mat-mini-fab
+                              disabled
+                              aria-label="Example icon button with a home icon"
+                            > -->
+                              <!-- <div class="plus-icon"></div> -->
+                              <img src="./assets/image/plus.png" style="width: 25%;" mat-mini-fab
+                              disabled (click)="addToOrder(item)" aria-label="Example icon button with a home icon">
+                              
+                            <!-- </button> -->
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <!-- <mat-list>
+              <mat-list-item *ngFor="let item of filteredMenuItems"> -->
+                <!-- <span matListItemTitle>{{ item.name }}</span>
+                <span matListItemLine>{{ item.price | currency }}</span> -->
+                <!-- <button mat-button color="primary" (click)="addToOrder(item)">
+                  Add to Order
+                </button> -->
+                <!-- <section>
+                  <div class="example-flex-container">
+                    <div class="example-button-container">
+                      <button
+                        (click)="addToOrder(item)"
+                        mat-mini-fab
+                        disabled
+                        aria-label="Example icon button with a home icon"
+                      >
+                        <mat-icon>Add</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                </section> -->
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col-5 m-3">
+        <mat-card class="bg-mini-card m-3">
+          <mat-card-header>
+            <mat-card-title>Current Order</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-list *ngIf="currentOrder.length > 0">
+              <mat-list-item *ngFor="let item of currentOrder">
+                <span matListItemTitle
+                  >{{ item.name }} ({{ item.quantity }})</span
+                >
+                <span matListItemLine>{{
+                  item.price * item.quantity | currency
+                }}</span>
+                <button mat-button color="warn" (click)="removeFromOrder(item)">
+                  Remove
+                </button>
+              </mat-list-item>
+            </mat-list>
+            <p *ngIf="currentOrder.length === 0">No items in the order.</p>
+
+            <h3>Total: {{ orderTotal | currency }}</h3>
+          </mat-card-content>
+          <mat-card-actions>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="saveOrder()"
+              [disabled]="currentOrder.length === 0"
+            >
+              Save Order
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <mat-card class="mt-4">
+    <mat-card-header>
+      <mat-card-title>Saved Orders</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let order of savedOrders; let i = index">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Order {{ i + 1 }} </mat-panel-title>
+            <mat-panel-description>
+              {{ order.length }} items
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item *ngFor="let item of order">
+              <span matListItemTitle
+                >{{ item.name }} ({{ item.quantity }})</span
+              >
+              <span matListItemLine>{{
+                item.price * item.quantity | currency
+              }}</span>
+            </mat-list-item>
+          </mat-list>
+          <p class="mt-2">Total: {{ orderTotal | currency }}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</mat-card>
