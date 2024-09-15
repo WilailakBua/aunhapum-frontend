@@ -1,39 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuModel } from '../../shared/model/menuModel';
-
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { ThemeService } from '../../shared/service/theme.service';
+export interface InsertElement {
+  name: string;
+  description: string;
+  price: number;
+  position: number;
+}
+const ELEMENT_DATA: InsertElement[] = []
 @Component({
   selector: 'app-insert-menu',
   templateUrl: './insert-menu.component.html',
   styleUrl: './insert-menu.component.css'
 })
-export class InsertMenuComponent implements OnInit {
+export class InsertMenuComponent implements OnInit, AfterViewInit  {
+
+  displayedColumns: string[] = ['position', 'name', 'description', 'price'];
+  dataSource = new MatTableDataSource<InsertElement>(ELEMENT_DATA);
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
+
+
+
+
 
   formModal: FormGroup;
+  fi: FormGroup;
   menuList: any[] = [];
+  dataInsert: any[] = [];
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private themeService: ThemeService
   ) {
 
   }
 
   ngOnInit(): void {
     this.createForm();
+    this.themeService.setTheme();
   }
 
   createForm() {
-    this.formModal = this.formBuilder.group({
-      insertName: ['', Validators.required],
-      insertPrice: ['', Validators.required],
+    this.fi = this.formBuilder.group({
+      // insertName: ['', Validators.required],
+      // insertPrice: ['', Validators.required],
+      name: ['', Validators.required],
+      description: [''],
+      price: ['', Validators.required],
     });
   }
 
-  insertName(value: any) {
+  name(value: any) {
 
   }
 
-  insertPrice(value: any) {
+  price(value: any) {
 
   }
 
@@ -51,4 +80,10 @@ export class InsertMenuComponent implements OnInit {
   clearMenu() {
     this.menuList = [];
   }
+
+  deleteRow(id: string): void {
+    this.dataInsert = this.dataInsert.filter(d => d.id !== id);
+  }
+
+
 }

@@ -1,0 +1,46 @@
+/* Bootstrap base styles */
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+table {
+  width: 100%;
+}
+
+/* Custom styles */
+:root {
+  --background: #ffffff; /* White */
+  --foreground: #1a1a1a; /* Dark Gray */
+  --card: #ffffff; /* White */
+  --card-foreground: #1a1a1a; /* Dark Gray */
+  --popover: #ffffff; /* White */
+  --popover-foreground: #1a1a1a; /* Dark Gray */
+  --primary: #1a1a1a; /* Dark Gray */
+  --primary-foreground: #ffffff; /* White */
+  --secondary: #f7f7f7; /* Light Gray */
+  --secondary-foreground: #1a1a1a; /* Dark Gray */
+  --muted: #f7f7f7; /* Light Gray */
+  --muted-foreground: #737373; /* Medium Gray */
+  --accent: #f7f7f7; /* Light Gray */
+  --accent-foreground: #1a1a1a; /* Dark Gray */
+  --destructive: #ff4d4d; /* Red */
+  --destructive-foreground: #ffffff; /* White */
+  --border: #e0e0e0; /* Light Border */
+  --input: #e0e0e0; /* Light Input Background */
+  --ring: #1a1a1a; /* Dark Gray Ring */
+  --radius: 0.5rem; /* Border Radius */
+}
+
+* {
+  border: 1px solid var(--border); /* Use Bootstrap's border utility */
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Default Bootstrap font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', serif; /* Example Bootstrap heading font */
+}
+
+/* Additional Bootstrap utility classes can be applied as needed */

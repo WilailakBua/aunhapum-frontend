@@ -76,6 +76,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -154,7 +157,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSnackBarModule,
     MatButtonModule,
     MatInputModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
+
   ],
   exports: [
     NzFlexModule,
@@ -232,8 +238,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatSnackBarModule,
     MatButtonModule,
     MatInputModule,
-    MatExpansionModule
-
+    MatExpansionModule,
+    MatTableModule,
+    MatPaginatorModule,
 
   ],
   providers: [HttpClient, AunhapumService]
