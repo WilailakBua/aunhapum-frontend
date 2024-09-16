@@ -1,4 +1,9 @@
-<!-- <nz-card class="ml-5 mr-5" nzTitle="เพิ่มเมนู">
+
+<div className="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
+  <h1 className="text-3xl font-bold mb-6">Menu Management</h1>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+<nz-card class="ml-5 mr-5">
   <form [formGroup]="formModal">
     <div class="col-12">
       <div class="row">
@@ -11,7 +16,7 @@
             nz-input
             type="text"
             formControlName="insertName"
-            (ngModelChange)="insertName($event)"
+            (ngModelChange)="name($event)"
           />
         </div>
         <div class="col-1">
@@ -23,7 +28,7 @@
             nz-input
             type="number"
             formControlName="insertPrice"
-            (ngModelChange)="insertPrice($event)"
+            (ngModelChange)="price($event)"
           />
         </div>
 
@@ -57,140 +62,5 @@
       </div>
     </div>
   </div>
-</nz-card> -->
-<mat-card>
-  <div className="container mx-auto my-8 px-4 sm:px-6 lg:px-8">
-    <h1 className="text-3xl font-bold mb-6">Menu Management</h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col-4 m-5">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Add New Menu Item</mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <form [formGroup]="fi">
+</nz-card>
 
-                  <div class="mb-2 col-12">
-                    <Label htmlFor="name">Name</Label>
-                  </div>
-                  <div class="mb-4 col-12">
-                    <mat-form-field appearance="outline">
-                      <mat-label>Name</mat-label>
-                      <input
-                        matInput
-                        id="name"
-                        formControlName="name"
-                        placeholder="name"
-                      />
-                      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="mb-2 col-12">
-                    <Label htmlFor="description">Description</Label>
-                  </div>
-                  <div class="mb-4 col-12">
-                    <mat-form-field class="example-full-width">
-                      <mat-label>description</mat-label>
-                      <textarea
-                        matInput
-                        formControlName="description"
-                        placeholder="description..."
-                      ></textarea>
-                    </mat-form-field>
-                  </div>
-
-
-                  <div class="mb-2 col-12">
-                    <Label htmlFor="price">Price</Label>
-                  </div>
-                  <div class="mb-4 col-12">
-                    <mat-form-field appearance="outline">
-                      <mat-label>Price</mat-label>
-                      <input
-                        matInput
-                        id="price"
-                        formControlName="price"
-                        placeholder="price"
-                      />
-                      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    </mat-form-field>
-                  </div>
-
-                  <div class="mb-4 col-12">
-                  <Button type="submit" variant="contained" color="primary">
-                    Add Menu Item
-                  </Button>
-                </div>
-
-                </form>
-              </mat-card-content>
-            </mat-card>
-          </div>
-          <div class="col-1"></div>
-          <div class="col-4 m-5">
-            <mat-card>
-              <mat-card-header>
-                <mat-card-title>Menu Items</mat-card-title>
-              </mat-card-header>
-              <mat-card-content>
-                <div class="mat-elevation-z8">
-                  <table mat-table [dataSource]="dataSource">
-                    <!-- Position Column -->
-                    <ng-container matColumnDef="position">
-                      <th mat-header-cell *matHeaderCellDef>No.</th>
-                      <td mat-cell *matCellDef="let element">
-                        {{ element.position }}
-                      </td>
-                    </ng-container>
-
-                    <!-- Name Column -->
-                    <ng-container matColumnDef="name">
-                      <th mat-header-cell *matHeaderCellDef>Name</th>
-                      <td mat-cell *matCellDef="let element">
-                        {{ element.name }}
-                      </td>
-                    </ng-container>
-
-                    <!-- Description Column -->
-                    <ng-container matColumnDef="description">
-                      <th mat-header-cell *matHeaderCellDef>Description</th>
-                      <td mat-cell *matCellDef="let element">
-                        {{ element.description }}
-                      </td>
-                    </ng-container>
-
-                    <!-- Price Column -->
-                    <ng-container matColumnDef="price">
-                      <th mat-header-cell *matHeaderCellDef>Price</th>
-                      <td mat-cell *matCellDef="let element">
-                        {{ element.price.toFixed(2) }}
-                      </td>
-                    </ng-container>
-
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr
-                      mat-row
-                      *matRowDef="let row; columns: displayedColumns"
-                    ></tr>
-                  </table>
-
-                  <mat-paginator
-                    [pageSizeOptions]="[5, 10, 20]"
-                    showFirstLastButtons
-                    aria-label="Select page of periodic elements"
-                  >
-                  </mat-paginator>
-                </div>
-              </mat-card-content>
-            </mat-card>
-          </div>
-          <div class="col-1"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</mat-card>

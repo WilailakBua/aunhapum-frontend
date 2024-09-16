@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface MenuItem {
   id: number;
@@ -30,7 +29,7 @@ export class MenuListComponent {
   order: OrderItem[] = [];
   searchTerm: string = '';
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor() {}
 
   ngOnInit() {
     this.filteredMenuItems = this.menuItems;
@@ -69,9 +68,7 @@ export class MenuListComponent {
   saveOrder() {
     // Here you would typically send the order to a backend service
     console.log('Saving order:', this.order);
-    this.snackBar.open(`Order saved! Total: $${this.calculateTotal()}`, 'Close', {
-      duration: 3000
-    });
+   
     this.order = []; // Clear the order after saving
   }
 

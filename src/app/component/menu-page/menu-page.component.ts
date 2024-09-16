@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
 interface MenuItem {
   id: number;
   name: string;
@@ -27,7 +26,7 @@ export class MenuPageComponent {
   currentOrder: OrderItem[] = [];
   savedOrders: OrderItem[][] = [];
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor() {}
 
   get filteredMenuItems(): MenuItem[] {
     return this.menuItems.filter(item => 
@@ -46,7 +45,6 @@ export class MenuPageComponent {
     } else {
       this.currentOrder.push({ ...item, quantity: 1 });
     }
-    this.snackBar.open(`Added ${item.name} to order`, 'Close', { duration: 2000 });
   }
 
   removeFromOrder(item: OrderItem): void {
@@ -57,7 +55,6 @@ export class MenuPageComponent {
       } else {
         this.currentOrder.splice(index, 1);
       }
-      this.snackBar.open(`Removed ${item.name} from order`, 'Close', { duration: 2000 });
     }
   }
 
@@ -65,7 +62,6 @@ export class MenuPageComponent {
     if (this.currentOrder.length > 0) {
       this.savedOrders.push([...this.currentOrder]);
       this.currentOrder = [];
-      this.snackBar.open('Order saved successfully', 'Close', { duration: 2000 });
     }
   }
 }
